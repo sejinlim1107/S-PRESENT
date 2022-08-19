@@ -100,9 +100,9 @@ def Present(pt, key, rounds, n):
     #  print(hex(i))
     
     for i in range(rounds-1):
-        pt = pt ^ key#s_rnd[i] #key
+        pt = pt ^ s_rnd[i] #key
         pt = Sbox(pt)
         pt = Permutation(pt)
-    ct = pt ^ key#s_rnd[-1]
+    ct = pt ^ s_rnd[-1]
 
     return ct
